@@ -265,4 +265,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 **Built with ❤️ for nonprofit organizations worldwide**
 
-*Empowering communities through technology and meaningful connections.* 
+*Empowering communities through technology and meaningful connections.*
+
+**Made by Tsewang Lhamo** 
