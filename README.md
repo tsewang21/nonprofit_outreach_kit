@@ -18,6 +18,8 @@ The GTPN Nonprofit Outreach Kit empowers nonprofit organizations to:
 
 This platform bridges the gap between traditional nonprofit management tools and modern professional networking needs, specifically addressing the unique challenges faced by diaspora and professional community organizations.
 
+Nonprofit Outreach Kit is an open-source platform built to help mission-driven organizations streamline and personalize their outreach. Whether you're asking for donations, promoting events, recruiting volunteers, or expanding your professional network, this tool helps you generate targeted emails, manage supporter data, and run impactful multichannel campaigns with less manual work. Originally designed for GTPN, it's easy to adapt to any nonprofit's outreach goals.
+
 ---
 
 ## ✨ **Key Features**
