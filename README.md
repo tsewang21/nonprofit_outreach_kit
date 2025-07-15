@@ -222,6 +222,55 @@ src/
 
 ---
 
+## 🚀 **Live Demo & Deployment**
+
+### **Live Application**
+The GTPN Nonprofit Outreach Kit is deployed and accessible at:
+**🌐 [https://tsewang21.github.io/nonprofit_outreach_kit/](https://tsewang21.github.io/nonprofit_outreach_kit/)**
+
+### **Quick Start with Demo Accounts**
+Try the platform immediately with these pre-configured accounts:
+- **Admin**: `admin@yourorg.org` / `password123`
+- **Manager**: `manager@yourorg.org` / `password123`
+
+### **Deployment Options**
+
+#### **GitHub Pages (Recommended for Demo)**
+The project includes automated GitHub Actions deployment:
+1. Push changes to the `main` branch
+2. GitHub Actions automatically builds and deploys to GitHub Pages
+3. Access your live site at `https://yourusername.github.io/nonprofit_outreach_kit/`
+
+#### **Custom Domain Deployment**
+For production use with your own domain:
+
+**Vercel (Recommended)**
+```bash
+npm install -g vercel
+vercel --prod
+```
+
+**Netlify**
+```bash
+npm run build
+# Upload the dist/ folder to Netlify
+```
+
+**Traditional Hosting**
+```bash
+npm run build
+# Upload the contents of dist/ to your web server
+```
+
+### **Environment Configuration**
+For production deployment, consider:
+- Replace localStorage with a proper database (PostgreSQL, MongoDB)
+- Implement proper authentication backend
+- Set up email service (SendGrid, Mailgun)
+- Configure analytics (Google Analytics, Mixpanel)
+
+---
+
 ## 🤝 **Contributing**
 
 We welcome contributions from the community! Here's how to get involved:
