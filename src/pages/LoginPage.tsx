@@ -37,6 +37,12 @@ const LoginPage: React.FC = () => {
     { email: 'manager@yourorg.org', role: 'Campaign Manager', password: 'password' }
   ];
 
+  const fillDemoCredentials = (email: string, password: string) => {
+    setEmail(email);
+    setPassword(password);
+    setError(''); // Clear any existing errors
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 flex items-center justify-center p-4">
       <div className="max-w-md w-full space-y-8">
@@ -138,15 +144,26 @@ const LoginPage: React.FC = () => {
 
         {/* Demo Credentials */}
         <div className="mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
-          <h3 className="text-sm font-medium text-blue-900 mb-2">Demo Accounts</h3>
+          <div className="mb-3 p-2 bg-green-100 rounded-md border border-green-300">
+            <p className="text-xs text-green-800 text-center font-medium">
+              💡 Click Campaign Manager login credentials for a demo showing
+            </p>
+          </div>
+          <h3 className="text-sm font-medium text-blue-900 mb-3">Demo Accounts</h3>
           <div className="space-y-2">
             {demoCredentials.map((cred, index) => (
-              <div key={index} className="text-xs">
-                <p className="text-blue-800">
-                  <span className="font-medium">{cred.role}:</span> {cred.email}
-                </p>
-                <p className="text-blue-600">Password: {cred.password}</p>
-              </div>
+              <button
+                key={index}
+                type="button"
+                onClick={() => fillDemoCredentials(cred.email, cred.password)}
+                className="w-full p-3 text-left bg-white border border-blue-300 rounded-md hover:bg-blue-50 hover:border-blue-400 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1"
+              >
+                <div className="text-xs">
+                  <p className="text-blue-800 font-medium mb-1">{cred.role}</p>
+                  <p className="text-blue-600">{cred.email}</p>
+                  <p className="text-blue-500 text-[10px] mt-1">Click to auto-fill</p>
+                </div>
+              </button>
             ))}
           </div>
           <p className="text-xs text-blue-600 mt-2">
