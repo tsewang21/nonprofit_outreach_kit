@@ -44,16 +44,16 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 flex items-center justify-center p-4">
-      <div className="max-w-md w-full space-y-8">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 flex items-center justify-center p-4 sm:p-6 lg:p-8">
+      <div className="max-w-md w-full space-y-6 sm:space-y-8">
         <div className="text-center">
           <div className="flex justify-center">
             <div className="bg-gradient-to-r from-blue-600 to-green-600 p-3 rounded-full">
               <Heart className="h-8 w-8 text-white" />
             </div>
           </div>
-          <h2 className="mt-4 text-3xl font-bold text-gray-900">Welcome Back</h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <h2 className="mt-4 text-2xl sm:text-3xl font-bold text-gray-900">Welcome Back</h2>
+          <p className="mt-2 text-sm sm:text-base text-gray-600 px-2">
             Sign in to your Nonprofit Outreach Kit account
           </p>
         </div>
@@ -79,11 +79,11 @@ const LoginPage: React.FC = () => {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="appearance-none rounded-md relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+                  className="appearance-none rounded-md relative block w-full px-3 py-3 sm:py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 text-base sm:text-sm"
                   placeholder="Enter your email"
                 />
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Mail className="h-4 w-4 text-gray-400" />
+                  <Mail className="h-5 w-5 sm:h-4 sm:w-4 text-gray-400" />
                 </div>
               </div>
             </div>
@@ -101,21 +101,21 @@ const LoginPage: React.FC = () => {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="appearance-none rounded-md relative block w-full px-3 py-2 pl-10 pr-10 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+                  className="appearance-none rounded-md relative block w-full px-3 py-3 sm:py-2 pl-10 pr-10 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 text-base sm:text-sm"
                   placeholder="Enter your password"
                 />
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Lock className="h-4 w-4 text-gray-400" />
+                  <Lock className="h-5 w-5 sm:h-4 sm:w-4 text-gray-400" />
                 </div>
                 <button
                   type="button"
-                  className="absolute inset-y-0 right-0 pr-3 flex items-center"
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0"
                   onClick={() => setShowPassword(!showPassword)}
                 >
                   {showPassword ? (
-                    <EyeOff className="h-4 w-4 text-gray-400 hover:text-gray-600" />
+                    <EyeOff className="h-5 w-5 sm:h-4 sm:w-4 text-gray-400 hover:text-gray-600" />
                   ) : (
-                    <Eye className="h-4 w-4 text-gray-400 hover:text-gray-600" />
+                    <Eye className="h-5 w-5 sm:h-4 sm:w-4 text-gray-400 hover:text-gray-600" />
                   )}
                 </button>
               </div>
@@ -126,7 +126,7 @@ const LoginPage: React.FC = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="group relative w-full flex justify-center py-3 sm:py-2 px-4 border border-transparent text-base sm:text-sm font-medium rounded-md text-white bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isLoading ? 'Signing in...' : 'Sign In'}
             </button>
@@ -142,31 +142,33 @@ const LoginPage: React.FC = () => {
           </div>
         </form>
 
+        {/* Demo Helper Message */}
+        <div className="mt-6 sm:mt-8 p-3 sm:p-2 bg-green-100 rounded-md border border-green-300">
+          <p className="text-sm sm:text-xs text-green-800 text-center font-medium">
+            💡 Click Campaign Manager login credentials for a demo showing
+          </p>
+        </div>
+
         {/* Demo Credentials */}
-        <div className="mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
-          <div className="mb-3 p-2 bg-green-100 rounded-md border border-green-300">
-            <p className="text-xs text-green-800 text-center font-medium">
-              💡 Click Campaign Manager login credentials for a demo showing
-            </p>
-          </div>
-          <h3 className="text-sm font-medium text-blue-900 mb-3">Demo Accounts</h3>
+        <div className="mt-3 sm:mt-4 p-4 sm:p-4 bg-blue-50 rounded-lg border border-blue-200">
+          <h3 className="text-base sm:text-sm font-medium text-blue-900 mb-3">Demo Accounts</h3>
           <div className="space-y-2">
             {demoCredentials.map((cred, index) => (
               <button
                 key={index}
                 type="button"
                 onClick={() => fillDemoCredentials(cred.email, cred.password)}
-                className="w-full p-3 text-left bg-white border border-blue-300 rounded-md hover:bg-blue-50 hover:border-blue-400 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1"
+                                className="w-full p-4 sm:p-3 text-left bg-white border border-blue-300 rounded-md hover:bg-blue-50 hover:border-blue-400 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1 active:bg-blue-100"
               >
-                <div className="text-xs">
-                  <p className="text-blue-800 font-medium mb-1">{cred.role}</p>
-                  <p className="text-blue-600">{cred.email}</p>
-                  <p className="text-blue-500 text-[10px] mt-1">Click to auto-fill</p>
+                <div className="text-sm sm:text-xs">
+                  <p className="text-blue-800 font-medium mb-1 text-base sm:text-sm">{cred.role}</p>
+                  <p className="text-blue-600 text-sm sm:text-xs">{cred.email}</p>
+                  <p className="text-blue-500 text-xs sm:text-[10px] mt-1">Click to auto-fill</p>
                 </div>
               </button>
             ))}
           </div>
-          <p className="text-xs text-blue-600 mt-2">
+          <p className="text-sm sm:text-xs text-blue-600 mt-3 sm:mt-2 text-center sm:text-left">
             Or create your own account using the sign up link above!
           </p>
         </div>
